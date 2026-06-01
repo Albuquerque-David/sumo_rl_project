@@ -27,9 +27,9 @@ sudo apt-get install xvfb
 Certifique-se de estar no ambiente virtual configurado com as dependências instaladas (incluindo `eclipse-sumo`). As dependências Python podem ser instaladas via `requirements.txt`:
 
 ```bash
-pip install -r requirements.txt
 source /your/venv_path/venv/bin/activate
 cd /your/path/sumo_rl_project/src
+pip install -r requirements.txt
 ```
 
 ### Treinamento Silencioso (Headless)
