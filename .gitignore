@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes Virtuais
+venv/
+env/
+.venv/
+.env
+
+# Diretórios de Treinamento e Modelos
+# Ignoramos a pasta models porque ela gera arquivos grandes (.pt, .gif) a cada treinamento
+models/
+*.pt
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Matplotlib
+*.png
+*.pdf

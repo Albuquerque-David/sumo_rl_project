@@ -1,0 +1,8 @@
+sumo-rl
+pettingzoo
+torch
+numpy
+matplotlib
+inquirer
+rich
+imageio
