@@ -23,7 +23,7 @@ def analyze(file_path, window=50):
     print(f"% Episodes > -100: Early = {early_good:.1f}% | Late = {late_good:.1f}%")
     print("\n")
 
-models_dir = '/home/dvd/.gemini/antigravity/scratch/sumo_rl_project/models'
+models_dir = './models'
 for d in sorted(glob.glob(os.path.join(models_dir, '20260531-*'))):
     metrics_file = os.path.join(d, 'metrics.csv')
     if os.path.exists(metrics_file):

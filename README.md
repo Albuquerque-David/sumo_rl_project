@@ -28,8 +28,8 @@ Certifique-se de estar no ambiente virtual configurado com as dependências inst
 
 ```bash
 pip install -r requirements.txt
-source /home/dvd/venv/bin/activate
-cd /home/dvd/.gemini/antigravity/scratch/sumo_rl_project/src
+source /your/venv_path/venv/bin/activate
+cd /your/path/sumo_rl_project/src
 ```
 
 ### Treinamento Silencioso (Headless)
