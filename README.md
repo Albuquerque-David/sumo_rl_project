@@ -28,7 +28,7 @@ Certifique-se de estar no ambiente virtual configurado com as dependências inst
 
 ```bash
 source /your/venv_path/venv/bin/activate
-cd /your/path/sumo_rl_project/src
+cd /your/path/sumo_rl_project
 pip install -r requirements.txt
 ```
 
