@@ -13,6 +13,8 @@ env/
 # Ignoramos a pasta models porque ela gera arquivos grandes (.pt, .gif) a cada treinamento
 models/
 *.pt
+*.csv
+*.txt
 
 # IDEs e Editores
 .vscode/

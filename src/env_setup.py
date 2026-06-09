@@ -23,6 +23,15 @@ def create_env(net_name='nets/2x2grid', render_mode=None, num_seconds=3600, show
     if net_name == 'nets/2x2grid':
         net_file = os.path.join(sumo_rl_path, net_name, "2x2.net.xml")
         route_file = os.path.join(sumo_rl_path, net_name, "2x2.rou.xml")
+    elif net_name == 'nets/3x3grid':
+        net_file = os.path.join(sumo_rl_path, net_name, "3x3Grid2lanes.net.xml")
+        route_file = os.path.join(sumo_rl_path, net_name, "routes14000.rou.xml")
+    elif net_name == 'nets/4x4-Lucas':
+        net_file = os.path.join(sumo_rl_path, "nets/4x4-Lucas", "4x4.net.xml")
+        route_file = os.path.join(sumo_rl_path, "nets/4x4-Lucas", "4x4c1c2c1c2.rou.xml")
+    elif net_name == 'nets/cologne8':
+        net_file = os.path.join(sumo_rl_path, "nets", "RESCO", "cologne8", "cologne8.net.xml")
+        route_file = os.path.join(sumo_rl_path, "nets", "RESCO", "cologne8", "cologne8.rou.xml")
     else:
         net_file = f"{net_name}.net.xml"
         route_file = f"{net_name}.rou.xml"

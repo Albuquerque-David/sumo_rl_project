@@ -49,7 +49,7 @@ class QMIXMixer(nn.Module):
         w1 = w1.view(-1, self.n_agents, self.embed_dim)
         b1 = b1.view(-1, 1, self.embed_dim)
         
-        hidden = F.elu(torch.bmm(q_values, w1) + b1)
+        hidden = F.leaky_relu(torch.bmm(q_values, w1) + b1, negative_slope=0.01)
         
         w_final = torch.abs(self.hyper_w_final(states))
         w_final = w_final.view(-1, self.embed_dim, 1)

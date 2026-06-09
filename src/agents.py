@@ -2,18 +2,16 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
+from collections import deque
 from networks import QNetwork, VDNMixer, QMIXMixer
 
 class GlobalReplayBuffer:
     def __init__(self, capacity=10000):
-        self.buffer = []
-        self.capacity = capacity
+        self.buffer = deque(maxlen=capacity)
         
     def push(self, transition):
         # transition: {'obs': dict, 'actions': dict, 'rewards': dict, 'next_obs': dict, 'dones': dict}
         self.buffer.append(transition)
-        if len(self.buffer) > self.capacity:
-            self.buffer.pop(0)
             
     def sample(self, batch_size):
         idx = np.random.choice(len(self.buffer), batch_size, replace=False)
@@ -24,7 +22,7 @@ class GlobalReplayBuffer:
 
 class MARLTrainer:
     """Treinador centralizado unificado para IQL, VDN e QMIX."""
-    def __init__(self, agents_list, obs_dim, action_dim, algo="IQL", lr=1e-3, gamma=0.99, use_norm=False, norm_factor=100.0, use_clip=False):
+    def __init__(self, agents_list, obs_dim, action_dim, algo="IQL", lr=5e-4, gamma=0.99, use_norm=False, norm_factor=100.0, use_clip=False):
         self.agents_list = agents_list
         self.n_agents = len(agents_list)
         self.algo = algo

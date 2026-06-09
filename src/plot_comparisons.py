@@ -10,7 +10,7 @@ def plot_comparisons(models_dir='../models'):
         print("Nenhum modelo encontrado.")
         return
         
-    plt.figure(figsize=(16, 12))
+    plt.figure(figsize=(16, 16))
     
     metrics = [
         ('GlobalReward', 'Recompensa Global do Episódio', 'Recompensa'),
@@ -18,11 +18,13 @@ def plot_comparisons(models_dir='../models'):
         ('AvgLoss', 'Loss Média', 'Loss'),
         ('Epsilon', 'Epsilon (Taxa de Exploração)', 'Epsilon'),
         ('Throughput', 'Veículos Completados (Throughput)', 'Carros Completados'),
-        ('WaitTime', 'Tempo de Espera Total', 'Tempo de Espera Acumulado')
+        ('WaitTime', 'Tempo de Espera Total', 'Tempo de Espera Acumulado'),
+        ('GreenAvg', 'Duração Média do Verde', 'Segundos'),
+        ('Act0', 'Frequência de Ação 0 (Norte-Sul)', 'Frequência')
     ]
     
     for i, (col, title, ylabel) in enumerate(metrics, 1):
-        plt.subplot(3, 2, i)
+        plt.subplot(4, 2, i)
         for d in directories:
             metrics_file = os.path.join(d, 'metrics.csv')
             if os.path.exists(metrics_file):
