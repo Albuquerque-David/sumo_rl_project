@@ -60,3 +60,7 @@ if not results_df.empty:
         print(f"\n{'='*50}\n MAP: {m} \n{'='*50}")
         map_df = results_df[results_df['Map'] == m].sort_values('WT_Avg')
         print(map_df.to_string(index=False))
+        
+    csv_out = 'analysis_summary.csv'
+    results_df.to_csv(csv_out, index=False)
+    print(f"\nResumo salvo com sucesso em: {csv_out}")
